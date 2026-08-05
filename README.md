@@ -20,7 +20,7 @@ Webhook pipeline validates HMAC signatures → extracts PR diffs →
 builds prompts → posts reviews as GitHub comments.
 Reviews stream in real-time via **Laravel Reverb + Echo**, rendered 
 step-by-step on the React frontend.
-`Laravel` `React` `PostgreSQL` `Redis` `Reverb` `Groq API` `Inertia.js` `Pest`
+`Laravel` `React` `PostgreSQL` `Redis` `Reverb` `Open Router API` `Inertia.js` `Pest`
 
 ### [Job Matching Engine](https://github.com/moemadeldin/jobpilot)
 Resume-to-job compatibility scoring via Groq AI (llama-3.3-70b), 
