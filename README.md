@@ -3,12 +3,13 @@ Backend developer focused on Laravel — building multi-tenant SaaS,
 real-time systems, and AI-integrated APIs.
 
 ---
-
 ## Open Source
 **[spatie/laravel-medialibrary](https://github.com/spatie/laravel-medialibrary)** (6.1k ★)
 - Fixed URL encoding bug affecting filenames with special characters — PR #3930
 - Fixed S3 double-encoding regression by detecting disk driver at runtime — PR #3934
 
+**[rap2hpoutre/fast-excel](https://github.com/rap2hpoutre/fast-excel)** (2.3k ★)
+- Added RTL (right-to-left) sheet export support, tracing the gap to a writer-lifecycle ordering constraint in the underlying OpenSpout library — PR #421, shipped in v5.15.0
 ---
 
 ## Projects
