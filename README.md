@@ -51,5 +51,5 @@ real-time failure alerts via Reverb, and a Filament admin panel with RBAC.
 ---
 
 ## Contact
-[LinkedIn](https://linkedin.com/in/mohamedemadeldinn) · 
-[Email](mailto:mohamedemadeldinnn2@gmail.com)
+[LinkedIn](https://linkedin.com/in/moemadeldin) · 
+[Email](mailto:moemadeldin.dev@gmail.com)
