@@ -1,56 +1,58 @@
 # Mohamed Emad Eldin
-Backend developer focused on Laravel — building multi-tenant SaaS, 
-real-time systems, and AI-integrated APIs.
+
+Backend developer focused on Laravel, building multi-tenant SaaS, real-time systems, and AI-integrated APIs. Open source contributor.
 
 ---
-## Open Source
-**[spatie/laravel-medialibrary](https://github.com/spatie/laravel-medialibrary)** (48.5M installs · 6.1k ★)
-- Fixed URL encoding bug affecting filenames with special characters — PR #3930
-- Fixed S3 double-encoding regression by detecting disk driver at runtime — PR #3934
-- Fixed a case-sensitivity causing images with uppercase file extensions to be silently re-encoded as JPEG — PR #3964
 
-**[rap2hpoutre/fast-excel](https://github.com/rap2hpoutre/fast-excel)** (28.8M installs · 2.3k ★)
-- Added RTL (right-to-left) sheet export support, tracing the gap to a writer-lifecycle ordering constraint in the underlying OpenSpout library — PR #421, shipped in v5.15.0
-- Fixed a fatal crash on export where callbacks returning null/false to skip a row threw an error instead of skipping it, catching two related latent bugs in the process; shipped with 9 regression tests — PR #423
-- Fixed limitRows() being silently ignored on export, writing full datasets despite row limits — PR #426
+## Open Source
+
+**[spatie/laravel-medialibrary](https://github.com/spatie/laravel-medialibrary)** (51M+ installs · 6.1k ★)
+- Fixed a URL encoding bug affecting filenames with special characters, [PR #3930](https://github.com/spatie/laravel-medialibrary/pull/3930)
+- Fixed the resulting S3 double-encoding regression by detecting the disk driver at runtime, [PR #3934](https://github.com/spatie/laravel-medialibrary/pull/3934)
+- Fixed a case-sensitivity bug that silently re-encoded images with uppercase file extensions as JPEG, [PR #3964](https://github.com/spatie/laravel-medialibrary/pull/3964)
+
+**[rap2hpoutre/fast-excel](https://github.com/rap2hpoutre/fast-excel)** (29M+ installs · 2.4k ★)
+- Added right-to-left sheet export support via OpenSpout's SheetView, with multi-sheet support, [PR #421](https://github.com/rap2hpoutre/fast-excel/pull/421), shipped in v5.15.0
+- Fixed a fatal export crash when callbacks returned null or false to skip a row, plus empty generator rows, with PHPUnit tests, [PR #424](https://github.com/rap2hpoutre/fast-excel/pull/424)
+- Fixed `limitRows()` being silently ignored on export, which wrote full datasets despite row limits, [PR #426](https://github.com/rap2hpoutre/fast-excel/pull/426)
+
 ---
 
 ## Projects
 
 ### [AI Code Review SaaS](https://github.com/moemadeldin/reviewiq)
-Multi-tenant platform where teams connect GitHub repos and receive 
-AI-generated PR reviews.
-Webhook pipeline validates HMAC signatures → extracts PR diffs → 
-builds prompts → posts reviews as GitHub comments.
-Reviews stream in real-time via **Laravel Reverb + Echo**, rendered 
-step-by-step on the React frontend.
-`Laravel` `React` `PostgreSQL` `Redis` `Reverb` `Open Router API` `Inertia.js` `Pest`
+Multi-tenant GitHub App that runs AI code review on pull requests. The webhook pipeline validates HMAC signatures, deduplicates by delivery ID, extracts PR diffs, builds prompts, and posts reviews as GitHub comments using GitHub App JWT auth.
 
-### [Job Matching Engine](https://github.com/moemadeldin/jobpilot)
-Resume-to-job compatibility scoring via Groq AI (llama-3.3-70b), 
-with auto-generated interview questions for candidates scoring above 
-70% — processed async via Laravel Queues.
-PDF parsing, 12+ REST endpoints with FormRequest validation, 
-**130+ Pest tests at 100% coverage**.
-`Laravel` `React` `MySQL` `Groq API` `Sanctum` `Pest`
+`DiffLineMapper` validates every flagged issue against the parsed diff, so hallucinated line numbers never reach a PR. Reviews stream live via **Laravel Reverb + Echo** to a React and TypeScript frontend, with GitHub OAuth2 sign-in.
+
+`Laravel` `React` `TypeScript` `PostgreSQL` `Redis` `Reverb` `OpenRouter API` `Inertia.js` `Tailwind CSS` `Docker` `AWS EC2` `Pest`
+
+### [Job Matching Engine](https://github.com/moemadeldin/ApplyAI)
+Resume-to-job compatibility scoring via Gemini, with auto-generated interview questions for candidates scoring above 70%, processed async via Laravel queues.
+
+Google OAuth2 sign-in, Cloudflare Turnstile and rate limiting on public endpoints, Redis caching to cut repeat AI calls, PDF parsing, and 12+ REST endpoints with FormRequest validation. **130+ Pest tests**, Dockerized and deployed to AWS EC2 via GitHub Actions.
+
+`Laravel` `React` `TypeScript` `PostgreSQL` `Redis` `Gemini API` `Sanctum` `Docker` `AWS EC2` `GitHub Actions` `Pest`
 
 ### [Real-time Monitoring](https://github.com/moemadeldin/heartbeat-lab)
-Health check system tracking HTTP status and response times across 
-**1,000+ daily pings**.
-Results stored in PostgreSQL with Redis for history tracking, 
-real-time failure alerts via Reverb, and a Filament admin panel with RBAC.
+Health check system tracking HTTP status and response times across **1,000+ daily pings**. Results are stored in PostgreSQL with Redis for history tracking, real-time failure alerts via Reverb, and a Filament admin panel with RBAC.
+
 `Laravel` `Livewire` `PostgreSQL` `Redis` `Reverb` `Filament` `Alpine.js`
 
 ---
 
 ## Stack
-**Primary:** PHP, Laravel, PostgreSQL, Redis, MySQL
+
+**Languages:** PHP, TypeScript, JavaScript, Python
+**Backend:** Laravel, REST APIs, Laravel Reverb, Queues, Sanctum, OAuth2, JWT
+**Databases:** PostgreSQL, MySQL, Redis
 **Frontend:** React, Vue.js, Inertia.js, Livewire, Alpine.js, Tailwind CSS
-**Tooling:** Laravel Reverb, Queues, Horizon, Sanctum, Filament, Pest
-**Integrations:** GitHub API, Groq, Stripe, DomPDF, Laravel Echo
+**DevOps:** Docker, GitHub Actions, AWS EC2, AWS S3
+**Testing:** Pest, PHPUnit
+**Integrations:** GitHub API, Gemini, OpenRouter, Laravel Echo, OpenCV
 
 ---
 
 ## Contact
-[LinkedIn](https://linkedin.com/in/moemadeldin) · 
-[Email](mailto:moemadeldin.dev@gmail.com)
+
+[LinkedIn](https://linkedin.com/in/moemadeldin) · [Email](mailto:moemadeldin.dev@gmail.com)
