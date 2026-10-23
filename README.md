@@ -12,6 +12,7 @@ real-time systems, and AI-integrated APIs.
 **[rap2hpoutre/fast-excel](https://github.com/rap2hpoutre/fast-excel)** (28.8M installs · 2.3k ★)
 - Added RTL (right-to-left) sheet export support, tracing the gap to a writer-lifecycle ordering constraint in the underlying OpenSpout library — PR #421, shipped in v5.15.0
 - Fixed a fatal crash on export where callbacks returning null/false to skip a row threw an error instead of skipping it, catching two related latent bugs in the process; shipped with 9 regression tests — PR #423
+- Fixed limitRows() being silently ignored on export, writing full datasets despite row limits — PR #426
 ---
 
 ## Projects
